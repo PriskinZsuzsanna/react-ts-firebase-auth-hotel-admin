@@ -32,7 +32,7 @@ const Navbar = ({loggedIn, isLoggedIn, email, displayName, logOut}: IProps) => {
                 isLoggedIn &&
                 <>
                 <nav>
-                    <div className="logo"><Link to="/"><p>Hotel Admin</p></Link></div>
+                    <div className="logo"><Link to="/"><p className='logo-p'>Hotel Admin</p></Link></div>
                     <ul>
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/create">Create</Link></li>
@@ -40,7 +40,7 @@ const Navbar = ({loggedIn, isLoggedIn, email, displayName, logOut}: IProps) => {
                         <li><button className='a-btn' onClick={logOut}>Log Out</button></li>
                     </ul>
                 </nav>
-                
+               
                 </>
             }
            

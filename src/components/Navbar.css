@@ -9,7 +9,12 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient( #5e1679d5, #4f2d82d5)
+    background: linear-gradient( var(--primary-light), var(--primary-dark));
+    transition: var(--transition);
+}
+
+nav:hover {
+    filter: hue-rotate(-10deg);
 }
 
 ul {
@@ -19,16 +24,15 @@ ul {
     gap: 2rem;
 }
 
-ul li a, .a-btn, p{
-    color: #fff;
+ul li a, .a-btn, .logo-p{
+    color: #ffffffb7;
     cursor: pointer;
-    opacity: .7;
     transition: var(--transition);
 }
 
 
-ul li:hover a, .a-btn:hover, p:hover {
-    opacity: 1;
+ul li:hover a, .a-btn:hover, .logo-p:hover {
+    color: #fff;
 }
 
 .logo {

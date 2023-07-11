@@ -8,6 +8,10 @@ import { auth } from './config/config';
 import Create from './components/Create';
 import Dashboard from './components/Dashboard';
 import NotFound from './components/NotFound';
+import Details from './components/Details';
+import { NewHotelType } from './types/hotel'
+import { DocumentData, QuerySnapshot, onSnapshot, } from 'firebase/firestore'
+import { hotelsCollection } from './config/controller'
 
 
 function App() {
@@ -15,11 +19,25 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [email, setEmail] = useState('')
   const [displayName, setDisplayName] = useState('')
+  const [hotels, setHotels] = useState<NewHotelType[]>([])
 
   useEffect(() => {
     setEmail(currentUserEmail())
     setDisplayName(currentUser())
   }, [])
+
+
+  useEffect(() => onSnapshot(hotelsCollection, (snapshot: QuerySnapshot<DocumentData>) => { //saved db item, callback with data what we can get from db
+    setHotels(snapshot.docs.map((doc) => {
+      return {
+        id: doc.id,
+        ...doc.data(),
+      };
+    })
+    )
+
+  }), []
+  );
 
   const loggedIn = () => {
     setIsLoggedIn(email != '' && displayName != '')
@@ -60,7 +78,8 @@ function App() {
           logOut={logOut}
         />
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home 
+          hotels={hotels} />} />
           <Route path='/login' element={<Login
             loggedIn={loggedIn}
             isLoggedIn={isLoggedIn}
@@ -71,6 +90,8 @@ function App() {
           />} />
           <Route path='/create' element={< Create />} />
           <Route path='/dashboard' element={< Dashboard />} />
+          <Route path='/details/:id' element={< Details 
+          hotels={hotels} />} />
           <Route path='*' element={< NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -1,0 +1,54 @@
+form {
+    width: 100%;
+    max-width: 700px;
+    margin-inline: auto;
+}
+
+.form-group {
+    margin-inline: auto;
+    margin-bottom: 1rem;
+}
+
+label, input, textarea, select {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: .6rem;
+}
+
+label, select {
+    font-weight: 600;
+}
+
+input, select, textarea {
+    border: 1px solid var(--primary-dark);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+}
+
+::placeholder, select {
+    color: var(--primary-dark)
+}
+
+textarea {
+    resize: none;
+    height: 200px;
+}
+
+.submit {
+    margin-top: 1rem;
+    display: inline-block;
+    width: 100%;
+    background: linear-gradient( var(--primary-light), var(--primary-dark));
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    color: #ffffffb3;
+    cursor: pointer;
+    scale: 1;
+    transition: var(--transition);
+}
+
+.submit:hover {
+    scale: 1.01;
+    filter: hue-rotate(-10deg);
+    color: #ffffff;
+}
