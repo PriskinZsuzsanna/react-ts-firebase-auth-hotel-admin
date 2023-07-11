@@ -5,9 +5,10 @@ import Star from '../assets/star.png'
 
 interface IProps {
     hotel: NewHotelType
+    mykey: any
 }
 
-const Card = ({ hotel }: IProps) => {
+const Card = ({ hotel, mykey}: IProps) => {
 
     let navigate = useNavigate()
 
@@ -34,7 +35,7 @@ const Card = ({ hotel }: IProps) => {
                 <div className="buttons">
                     <div className='stars'>
                     {starArr.map((star) => (
-                        <img className='star' src={Star} alt="" />
+                        <img className='star' src={Star} alt="" key={Math.random()}/>
                     ))}
                     </div>
                     <button onClick={()=> {navToDetail(`${hotel.id}`)}} className="read-more-btn">Read More</button>

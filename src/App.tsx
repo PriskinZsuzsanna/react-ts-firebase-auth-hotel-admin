@@ -12,6 +12,7 @@ import Details from './components/Details';
 import { NewHotelType } from './types/hotel'
 import { DocumentData, QuerySnapshot, onSnapshot, } from 'firebase/firestore'
 import { hotelsCollection } from './config/controller'
+import Edit from './components/Edit';
 
 
 function App() {
@@ -79,7 +80,8 @@ function App() {
         />
         <Routes>
           <Route path='/' element={<Home 
-          hotels={hotels} />} />
+          hotels={hotels} 
+           />} />
           <Route path='/login' element={<Login
             loggedIn={loggedIn}
             isLoggedIn={isLoggedIn}
@@ -88,10 +90,18 @@ function App() {
             currentUser={currentUser}
             currentUserEmail={currentUserEmail}
           />} />
-          <Route path='/create' element={< Create />} />
-          <Route path='/dashboard' element={< Dashboard />} />
+          <Route path='/create' element={< Create 
+          email={email}
+          displayName={displayName}
+          />} />
+          <Route path='/dashboard' element={< Dashboard 
+          hotels={hotels} 
+          email={email}
+          displayName={displayName} />} />
           <Route path='/details/:id' element={< Details 
-          hotels={hotels} />} />
+          hotels={hotels}  />} />
+          <Route path='/edit/:id' element={< Edit 
+          hotels={hotels}  />} />
           <Route path='*' element={< NotFound />} />
         </Routes>
       </BrowserRouter>

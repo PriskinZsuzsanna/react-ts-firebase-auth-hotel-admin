@@ -3,7 +3,13 @@ import { useNavigate } from "react-router-dom";
 import './Create.css'
 import { addHotel } from '../config/controller';
 
-const Create = () => {
+interface IProps {
+  email: string;
+  displayName: string;
+}
+
+
+const Create = ({email, displayName}:IProps) => {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [feature, setFeature] = useState('Room Only')
@@ -24,6 +30,8 @@ const Create = () => {
       stars,
       address,
       perNight,
+      email,
+      displayName
     })
     console.log("successfully added a new hotel");
     navigate("/");

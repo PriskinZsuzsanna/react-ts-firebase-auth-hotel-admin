@@ -8,6 +8,8 @@ export interface NewHotelType {
     stars?: string;
     title?: string;
     address?: string;
+    email?: string;
+    displayName?: string;
 }
 
 //without id
@@ -19,4 +21,6 @@ export interface AddHotelType {
     stars: string;
     title: string;
     address: string;
+    email: string;
+    displayName: string;
 }

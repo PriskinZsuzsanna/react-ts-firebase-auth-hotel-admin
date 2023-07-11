@@ -11,6 +11,7 @@ interface IProps {
 const Home = ({hotels}: IProps) => {
 
 
+
   return (
     <section>
       <div className="container">
@@ -18,6 +19,8 @@ const Home = ({hotels}: IProps) => {
         <div className="card-container">
           {hotels.map((hotel) => (
             <Card
+              key={hotel.id}
+              mykey={hotel.id}
               hotel={hotel} />
           ))}
         </div>

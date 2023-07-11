@@ -9,14 +9,13 @@ interface IProps {
 }
 
 
-const Details = ({ hotels }: IProps) => {
+const Details = ({ hotels}: IProps) => {
     let param = useParams()
     let navigate = useNavigate()
     const [hotel, setHotel] = useState<NewHotelType>({})
     const [starArr, setStarArr] = useState([])
 
     useEffect(() => {
-        console.log(param.id)
         setHotel(getActual())
         let arr: any = getActual().stars?.split('')
         setStarArr(arr)
@@ -47,7 +46,7 @@ const Details = ({ hotels }: IProps) => {
                         <div className="buttons">
                             <div className='stars'>
                                 {starArr.map((star) => (
-                                    <img className='star' src={Star} alt="" />
+                                    <img className='star' src={Star} alt="" key={Math.random()}/>
                                 ))}
                             </div>
                             <button onClick={navBack} className="read-more-btn">Back</button>

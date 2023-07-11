@@ -65,7 +65,7 @@ figcaption {
 }
 
 .btn {
-    padding: .7rem 3rem;
+    padding: .4rem 2rem;
     background: #f3d2f8;
     opacity: .9;
     backdrop-filter: blur(10px);
@@ -75,6 +75,7 @@ figcaption {
     cursor: pointer;
     translate: 0 0;
     transition: var(--transition);
+    z-index: 4;
 }
 
 .btn:hover {
@@ -84,8 +85,14 @@ figcaption {
 
 .btn-per-night {
     position: absolute;
-    top: 20%;
+    top: 25%;
     right: 5%;
+}
+
+.actions button {
+    margin-left: 1rem;
+    color: #fff;
+    cursor: pointer;
 }
 
 @media (min-width: 430px){
