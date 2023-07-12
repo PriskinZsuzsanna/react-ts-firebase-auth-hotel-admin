@@ -72,7 +72,7 @@ const Edit = ({hotels}:IProps) => {
     return (
       <section>
         <div className="container">
-          <h1>Register new hotel</h1>
+          <h1>Edit your hotel</h1>
   
           <div className='form' >
             <div className="form-group">

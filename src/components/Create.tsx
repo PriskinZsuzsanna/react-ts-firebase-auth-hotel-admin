@@ -32,9 +32,9 @@ const Create = ({email, displayName}:IProps) => {
       perNight,
       email,
       displayName
-    })
+    }, navigate)
     console.log("successfully added a new hotel");
-    navigate("/");
+    ;
   }
 
   return (

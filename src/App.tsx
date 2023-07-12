@@ -103,7 +103,7 @@ function App() {
           hotels={hotels}  />} />
           <Route path='/edit/:id' element={< Edit 
           hotels={hotels}  />} />
-          <Route path='feedback' element={<Feedback />} />
+          <Route path='feedback/:feed' element={<Feedback />} />
           <Route path='*' element={< NotFound />} />
         </Routes>
       </BrowserRouter>

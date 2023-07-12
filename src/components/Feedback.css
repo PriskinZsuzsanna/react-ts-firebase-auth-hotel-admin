@@ -1,0 +1,60 @@
+.feedback {
+    background: var(--primary-dark);
+    height: calc(100vh - 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.check {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(130deg, var(--primary-dark) 20%, var(--primary-light-alpha));
+    position: relative;
+    box-shadow: 4px 4px 10px var(--primary-light-alpha);
+    margin-bottom: 1.5rem;
+    animation: scale 2.5s linear;
+}
+
+.check::before {
+    content: '';
+    position: absolute;
+    top: 66%;
+    left: 38%;
+    width: .4rem;
+    height: 2rem;
+    transform-origin: top;
+    rotate: 130deg;
+    background: linear-gradient(var(--dark-white), var(--primary-dark));
+}
+.check::after {
+    content: '';
+    position: absolute;
+    top: 66%;
+    left: 37%;
+    width: .4rem;
+    height: 5.3rem;
+    transform-origin: top;
+    rotate: -136deg;
+    background: linear-gradient(var(--dark-white), var(--primary-dark));
+}
+
+.feedback h1 {
+    text-shadow: 1px 1px 4px var(--dark-white);
+    font-size: 2.5rem;
+}
+
+.feedback p {
+    color: var(--dark-white);
+}
+
+@keyframes scale {
+    from {
+        scale: 1;
+    }
+    to {
+        scale: 1.05;
+    }
+}

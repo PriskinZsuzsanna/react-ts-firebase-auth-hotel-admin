@@ -9,6 +9,7 @@
     --primary-light-alpha: #5f167950;
     --primary-dark: #4f2d82d5;
     --primary-dark-alpha: #4f2d8269;
+    --dark-white: #ffffffb7;
 }
 
 *, *::after, *::before{
@@ -47,6 +48,17 @@ h1 {
 h3 {
     text-align: center;
     margin-bottom: 1rem;
+}
+
+h1:has(~p){
+    margin-bottom: 1rem;
+}
+
+h1~p {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    color: #222;
 }
 
 p {

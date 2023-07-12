@@ -31,6 +31,7 @@ const Dashboard = ({ email, displayName, hotels }: IProps) => {
     <section>
       <div className="container">
         <h1>My Hotels</h1>
+        <p>Manage your hotels!</p>
         <div className="card-container">
           {myHotels.map((hotel) => (
           <CardDash

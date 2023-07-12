@@ -1,5 +1,3 @@
-- nav menu
-- scroll menu
+-loading
 - footer
 - animation
-- feedback

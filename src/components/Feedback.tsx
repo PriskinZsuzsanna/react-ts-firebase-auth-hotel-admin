@@ -1,23 +1,41 @@
-import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom';
+import './Feedback.css'
 
 const Feedback = () => {
 
+    let param = useParams()
     let navigate = useNavigate()
 
+    const [feed, setFeed] = useState('')
+
     useEffect(() => {
+        console.log(param)
+        getFeed()
         myTimeout()
     }, [])
 
     const myTimeout = () => {
         setTimeout(() => {
             navigate('/dashboard')
-        }, 2000)
+        }, 5000)
+    }
+
+    const getFeed = () => {
+        if(param.feed == 'created'){
+            setFeed('Hotel Added')
+        } else if(param.feed == 'edited'){
+            setFeed('Hotel Updated')
+        } else if(param.feed == 'deleted'){
+            setFeed('Hotel Deleted')
+        }
     }
 
 return (
-    <div>
-        Feedback
+    <div className='feedback'>
+        <div className="check"></div>
+        <h1>Success!</h1>
+        <p>{feed}!</p>
     </div>
 )
 }

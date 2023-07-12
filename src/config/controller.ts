@@ -8,9 +8,10 @@ import { NavigateFunction } from 'react-router-dom';
 export const hotelsCollection = collection(db, 'hotels') //firestore db and db path
 
 //Add hotel to db
-export const addHotel = async (hotelData: AddHotelType) => {
+export const addHotel = async (hotelData: AddHotelType, navigate: NavigateFunction) => {
     const newHotel = await addDoc(hotelsCollection, {...hotelData})
     console.log('hotel created ')
+    navigate('/feedback/created') 
 }
 
 //Delete Hotel from db
@@ -18,7 +19,7 @@ export const deleteHotel = async (id: string | undefined, navigate: NavigateFunc
     const document = doc(db, `hotels/${id}`)
     await deleteDoc(document)
     console.log('Hotel Deleted')
-    navigate('/') 
+    navigate('/feedback/deleted') 
 }
 
 //Edit
@@ -26,5 +27,5 @@ export const updateHotel = async (id: string | undefined, docData: any, navigate
     const document = doc(db, `hotels/${id}`)
     await setDoc(document, docData, {merge: true})
     console.log('Updated')
-    navigate('/Feedback') 
+    navigate('/feedback/edited') 
 }

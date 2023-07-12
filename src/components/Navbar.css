@@ -45,7 +45,7 @@ ul.open {
 }
 
 ul.open a, ul.open .a-btn {
-    color: #ffffffb7;
+    color: var(--dark-white);
     cursor: pointer;
     font-size: 1.3rem;
     font-weight: 600;
@@ -54,11 +54,11 @@ ul.open a, ul.open .a-btn {
 
 .logo p{
     font-size: 1.4rem;
-    color: #ffffffb7;
+    color: var(--dark-white);
 }
 
 .menu-toggle {
-    color: #ffffffb7;
+    color: var(--dark-white);
     cursor: pointer;
 }
 
@@ -82,7 +82,7 @@ ul.open a, ul.open .a-btn {
     
     ul li a, .a-btn, .logo-p,
     ul.open li a, ul.open .a-btn, .logo-p{
-        color: #ffffffb7;
+        color: var(--dark-white);
         cursor: pointer;
         font-size: 1rem;
         font-weight: 400;
