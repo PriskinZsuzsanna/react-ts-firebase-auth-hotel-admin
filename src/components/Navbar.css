@@ -1,5 +1,13 @@
 header {
     width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+header.open {
+    backdrop-filter: blur(10px);
 }
 
 nav {
@@ -17,24 +25,72 @@ nav:hover {
     filter: hue-rotate(-10deg);
 }
 
-ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
+ul.closed {
+    display: none;
 }
 
-ul li a, .a-btn, .logo-p{
+ul.open {
+    position: absolute;
+    inset:0;
+    top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    width: 100%;
+    height: 100vh;
+    background: var(--primary-dark);
+    backdrop-filter: blur(10px);
+}
+
+ul.open a, ul.open .a-btn {
     color: #ffffffb7;
     cursor: pointer;
-    transition: var(--transition);
+    font-size: 1.3rem;
+    font-weight: 600;
 }
 
 
-ul li:hover a, .a-btn:hover, .logo-p:hover {
-    color: #fff;
-}
-
-.logo {
+.logo p{
     font-size: 1.4rem;
+    color: #ffffffb7;
+}
+
+.menu-toggle {
+    color: #ffffffb7;
+    cursor: pointer;
+}
+
+@media (min-width: 770px){
+    .menu-toggle{
+        display: none;
+    }
+
+    ul.open, ul.closed {
+        position: static;
+        height: 4rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        width: auto;
+        background: transparent;
+        backdrop-filter: none;
+    }
+    
+    ul li a, .a-btn, .logo-p,
+    ul.open li a, ul.open .a-btn, .logo-p{
+        color: #ffffffb7;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 400;
+        transition: var(--transition);
+    }
+    
+    
+    ul li:hover a, .a-btn:hover, .logo-p:hover {
+        color: #fff;
+    }
 }

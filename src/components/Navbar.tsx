@@ -1,5 +1,7 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { useNavigate, Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faBars, faClose} from '@fortawesome/free-solid-svg-icons'
 import './Navbar.css'
 
 interface IProps {
@@ -14,6 +16,8 @@ interface IProps {
 
 const Navbar = ({loggedIn, isLoggedIn, email, displayName, logOut}: IProps) => {
 
+    const [isOpen, setIsOpen] = useState(false)
+
     let navigate = useNavigate()
 
     useEffect(() => {
@@ -25,20 +29,33 @@ const Navbar = ({loggedIn, isLoggedIn, email, displayName, logOut}: IProps) => {
         }
       }, [email, displayName, isLoggedIn])
 
+      const toggleMenu = () => {
+        setIsOpen(!isOpen)
+      }
+
+      const closeMenu = () => {
+        if(isOpen == true) {
+            setIsOpen(false)
+        }
+      }
+
 
     return (
-        <header>
+        <header className={`${isOpen? "open" : "closed"}`}>
             {
                 isLoggedIn &&
                 <>
                 <nav>
                     <div className="logo"><Link to="/"><p className='logo-p'>Hotel Admin</p></Link></div>
-                    <ul>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/create">Create</Link></li>
-                        <li><Link to="/dashboard">Dashboard</Link></li>
-                        <li><button className='a-btn' onClick={logOut}>Log Out</button></li>
+                    <ul className={`ul ${isOpen? "open" : "closed"}`}>
+                        <li onClick={closeMenu}><Link to="/">Home</Link></li>
+                        <li onClick={closeMenu}><Link to="/create">Create</Link></li>
+                        <li onClick={closeMenu}><Link to="/dashboard">Dashboard</Link></li>
+                        <li onClick={closeMenu}><button className='a-btn' onClick={logOut}>Log Out</button></li>
                     </ul>
+                    <div className="menu-toggle" onClick={toggleMenu}>
+                    <FontAwesomeIcon icon={!isOpen ? faBars : faClose} />
+                    </div>
                 </nav>
                
                 </>

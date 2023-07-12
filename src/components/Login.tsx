@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { auth, provider } from '../config/config'
 import { signInWithPopup } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faGoogle} from '@fortawesome/free-brands-svg-icons'
 
 interface IProps {
   loggedIn: any
@@ -38,9 +40,12 @@ const Login = ({ loggedIn, isLoggedIn, setDisplayName, setEmail, currentUser, cu
   }
 
   return (
-    <section>
+    <section className='login-section'>
       <div className="container">
-        <button onClick={signInWithGoogle}>Sign in with Google</button>
+        <h1 className='gradient-text'>Hotel Database</h1>
+        <button className='login-btn' onClick={signInWithGoogle}>
+        <FontAwesomeIcon icon={faGoogle} />
+          Sign in with Google</button>
       </div>
     </section>
   )
