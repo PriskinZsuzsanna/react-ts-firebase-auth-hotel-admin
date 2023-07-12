@@ -15,9 +15,12 @@ const Card = ({ hotel, mykey}: IProps) => {
     const [starArr, setStarArr] = useState([])
 
     useEffect(()=> {
-        let arr:any = hotel.stars?.split('')
+        setStarArr([])
+        console.log(starArr)
+        let arr:any = hotel.stars?.split(',')
         setStarArr(arr)
     }, [])
+    console.log(starArr)
 
     const navToDetail = (id:string) => {
         navigate(`/details/${id}`)

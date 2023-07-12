@@ -13,6 +13,7 @@ import { NewHotelType } from './types/hotel'
 import { DocumentData, QuerySnapshot, onSnapshot, } from 'firebase/firestore'
 import { hotelsCollection } from './config/controller'
 import Edit from './components/Edit';
+import Feedback from './components/Feedback';
 
 
 function App() {
@@ -102,6 +103,7 @@ function App() {
           hotels={hotels}  />} />
           <Route path='/edit/:id' element={< Edit 
           hotels={hotels}  />} />
+          <Route path='feedback' element={<Feedback />} />
           <Route path='*' element={< NotFound />} />
         </Routes>
       </BrowserRouter>

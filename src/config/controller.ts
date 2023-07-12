@@ -22,8 +22,9 @@ export const deleteHotel = async (id: string | undefined, navigate: NavigateFunc
 }
 
 //Edit
-export const updateHotel = async (id: string | undefined, docData: any) => {
+export const updateHotel = async (id: string | undefined, docData: any, navigate: NavigateFunction) => {
     const document = doc(db, `hotels/${id}`)
     await setDoc(document, docData, {merge: true})
     console.log('Updated')
+    navigate('/Feedback') 
 }

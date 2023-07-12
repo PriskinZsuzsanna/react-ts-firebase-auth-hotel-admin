@@ -66,8 +66,7 @@ const Edit = ({hotels}:IProps) => {
     }
   
     const saveHotel = () => {
-      updateHotel(id, { title:title, description: description, feature:feature, stars:stars, address:address, perNight:perNight, imgSource:imgSource });
-      navigate("/");
+      updateHotel(id, { title:title, description: description, feature:feature, stars:stars, address:address, perNight:perNight, imgSource:imgSource }, navigate);
     }
   
     return (
@@ -137,7 +136,7 @@ const Edit = ({hotels}:IProps) => {
                 <option value="1">1</option>
                 <option value="1,1">2</option>
                 <option value="1,1,1">3</option>
-                <option value="1,1,1,1,">4</option>
+                <option value="1,1,1,1">4</option>
                 <option value="1,1,1,1,1">5</option>
               </select>
             </div>

@@ -104,7 +104,7 @@ const Create = ({email, displayName}:IProps) => {
               <option value="1">1</option>
               <option value="1,1">2</option>
               <option value="1,1,1">3</option>
-              <option value="1,1,1,1,">4</option>
+              <option value="1,1,1,1">4</option>
               <option value="1,1,1,1,1">5</option>
             </select>
           </div>
