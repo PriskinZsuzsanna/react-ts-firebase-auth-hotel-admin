@@ -13,6 +13,5 @@ Page Transition Animation
 Mobile First
 
 Links
-https://priskinzsuzsanna.github.io/react-ts-firebase-auth-hotel-admin/
 
 Screenshot
