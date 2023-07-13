@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { NewHotelType } from '../types/hotel'
 import { updateHotel } from '../config/controller'
+import Footer from './Footer'
 
 interface IProps {
     hotels: NewHotelType[]
@@ -70,6 +71,7 @@ const Edit = ({hotels}:IProps) => {
     }
   
     return (
+      <>
       <section>
         <div className="container">
           <h1>Edit your hotel</h1>
@@ -152,7 +154,7 @@ const Edit = ({hotels}:IProps) => {
             </div>
   
             <div className="form-group">
-              <label>Price per Night (£):</label>
+              <label>Price per Night ($):</label>
               <input
                 type="text"
                 required
@@ -168,6 +170,8 @@ const Edit = ({hotels}:IProps) => {
           </div>
         </div>
       </section>
+      <Footer />
+      </>
     )
 }
 

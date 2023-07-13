@@ -18,7 +18,7 @@ const Feedback = () => {
     const myTimeout = () => {
         setTimeout(() => {
             navigate('/dashboard')
-        }, 5000)
+        }, 3000)
     }
 
     const getFeed = () => {
@@ -32,11 +32,11 @@ const Feedback = () => {
     }
 
 return (
-    <div className='feedback'>
+    <section className='feedback'>
         <div className="check"></div>
         <h1>Success!</h1>
         <p>{feed}!</p>
-    </div>
+    </section>
 )
 }
 

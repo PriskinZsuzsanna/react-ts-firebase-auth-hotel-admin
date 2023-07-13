@@ -4,6 +4,7 @@ import { NewHotelType, } from '../types/hotel'
 import Star from '../assets/star.png'
 import './Card.css'
 import CardD from './CardD'
+import Footer from './Footer'
 
 interface IProps {
     hotels: NewHotelType[]
@@ -30,6 +31,7 @@ const Details = ({ hotels}: IProps) => {
 
 
     return (
+        <>
         <section>
             <div className="container">
             <CardD
@@ -38,6 +40,8 @@ const Details = ({ hotels}: IProps) => {
               hotel={hotel} />
             </div>
         </section>
+        <Footer />
+        </>
 
     )
 }

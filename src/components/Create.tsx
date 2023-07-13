@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import './Create.css'
 import { addHotel } from '../config/controller';
+import Footer from './Footer';
 
 interface IProps {
   email: string;
@@ -38,6 +39,7 @@ const Create = ({email, displayName}:IProps) => {
   }
 
   return (
+    <>
     <section>
       <div className="container">
         <h1>Register new hotel</h1>
@@ -120,7 +122,7 @@ const Create = ({email, displayName}:IProps) => {
           </div>
 
           <div className="form-group">
-            <label>Price per Night (£):</label>
+            <label>Price per Night ($):</label>
             <input
               type="text"
               required
@@ -136,6 +138,8 @@ const Create = ({email, displayName}:IProps) => {
         </form>
       </div>
     </section>
+    <Footer />
+    </>
   )
 }
 

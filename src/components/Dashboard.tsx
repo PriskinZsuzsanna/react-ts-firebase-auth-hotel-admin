@@ -5,6 +5,7 @@ import { deleteHotel } from "../config/controller";
 import './Card.css'
 import { useNavigate } from 'react-router-dom';
 import CardDash from './CardDash';
+import Footer from './Footer';
 
 interface IProps {
   email: string;
@@ -28,6 +29,7 @@ const Dashboard = ({ email, displayName, hotels }: IProps) => {
 
 
   return (
+    <>
     <section>
       <div className="container">
         <h1>My Hotels</h1>
@@ -42,6 +44,8 @@ const Dashboard = ({ email, displayName, hotels }: IProps) => {
         </div>
       </div>
     </section>
+    <Footer />
+    </>
   )
 }
 

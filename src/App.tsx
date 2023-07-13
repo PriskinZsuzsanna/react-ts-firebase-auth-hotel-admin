@@ -18,6 +18,7 @@ import Feedback from './components/Feedback';
 
 function App() {
 
+  const [isLoading, setIsLoading] = useState(true)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [email, setEmail] = useState('')
   const [displayName, setDisplayName] = useState('')
@@ -40,6 +41,12 @@ function App() {
 
   }), []
   );
+
+  useEffect(() => {
+    if(hotels.length > 0){
+      setIsLoading(false)
+    }
+  }, [hotels])
 
   const loggedIn = () => {
     setIsLoggedIn(email != '' && displayName != '')
@@ -68,7 +75,7 @@ function App() {
     setDisplayName(currentUser())
   }
 
-
+  
   return (
     <div className="App">
       <BrowserRouter>
@@ -82,6 +89,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home 
           hotels={hotels} 
+          isLoading={isLoading}
            />} />
           <Route path='/login' element={<Login
             loggedIn={loggedIn}

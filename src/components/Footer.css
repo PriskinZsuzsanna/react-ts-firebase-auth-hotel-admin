@@ -1,0 +1,35 @@
+footer {
+    width: 100%;
+    padding: 2rem;
+    background: radial-gradient( #510b53 30%, var(--primary-dark) 80%, var(--primary-dark-alpha));
+    color: var(--dark-white);
+    filter: hue-rotate(-10deg);
+    text-align: center;
+}
+
+footer p, footer h3 {
+    font-weight: 400;
+}
+
+footer:hover {
+    filter: hue-rotate(0);
+}
+
+.social {
+    padding-block: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    scale: 1;
+    transition: var(--transition);
+}
+
+.icon:hover {
+    scale: 1.1;
+    color: #fff;
+}

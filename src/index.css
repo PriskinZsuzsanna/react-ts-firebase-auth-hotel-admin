@@ -143,6 +143,35 @@ section {
     -moz-text-fill-color: transparent;
 }
 
+.loading-section {
+    text-align: center;
+}
+
+.loading-img {
+    max-width: 50%;
+    margin-top: 3rem;
+    margin-inline: auto;
+}
+
+.loading-section .img-container {
+    width: 500px;
+    max-width: 100%;
+    margin-inline: auto;
+}
+
+section {
+    animation: fadeIn .6s ;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 @media (min-width: 990px) {
    .login-section {
     display: flex;
